@@ -15,77 +15,99 @@
       }
     </script>
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+    .ui-dev{
+        float: right;
+    }
+    .ui-center{
+        
+        
+    }
+      /*.bd-placeholder-img {*/
+      /*  font-size: 1.125rem;*/
+      /*  text-anchor: middle;*/
+      /*  -webkit-user-select: none;*/
+      /*  -moz-user-select: none;*/
+      /*  user-select: none;*/
+      /*}*/
+
+/*.marginRow{*/
+/*     margin:0px !important; */
+/*   }*/
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
       }
+      
+      
     </style>
 
-     
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/e6cab2420c.js"></script>
   </head>
-  <body class="text-center">
-    
-
-  <main class="container" id="print-section"  style="margin-top:150px ;">
-    
-
-    <a type ="button" onClick="logout()"  href="#" title="logout"><i style="text-align: right;" class="fa fa-sign-out"></i> Logout</a>
-    
-    <br>
-      <img src="image/loogoo.png" alt="" height="50">
-
-      <h2 class="h3 mb-3 fw-normal" style="color:#000080; margin-top: 10px;">Welcome to HatchMove</h2>
-    <p>Please select the service items your organization would need and calculate your quotation automatically:</p>
-
-    <div class="container" id="print_id">
-      <table class="table text-center">
-        <thead id="c2" style="display: block;">
-          <!-- <p>
-            <center><img class="mb-4" src="image/loogoo.png" alt=""   height="57"></center>
-          </p> -->
-          
+  <body>
+  <section class="container" id="print-section">
+      <div class="row">
+          <div class="col"></div>
+          <div class="col text-center">
+              <img src="image/loogoo.png" alt="" height="50">
+          </div>
+          <div class="col text-end">
+              <a type="button" onClick="logout()" href="#" title="logout">
+                  <i class="fa fa-sign-out"></i> Logout</a>
+          </div>
+      </div>
+      
+      <div class="row">
+          <div class="col-12">
+                <div class="text-center">
+                  <h2 class="h3 mb-3 fw-normal" style="color:#000080; margin-top: 10px;">Welcome to HatchMove</h2>
+                <p>Please select the service items your organization would need and calculate your quotation automatically:</p>
+                </div>
+          </div>
+      </div>
+      <div class="row marginRow">
           <p style="text-align: right;">
               <strong>Quotation No:</strong> <span id="qtn"></span>
           </p>
-          
-         
-        </thead>
+      </div>
+      
+      <div class="row">
+          <div class="col-12">
+              <!--<div class="table-responsive">-->
+        <table class="table table-bordered">
         <thead>
-          
-          <tr>
-            <th  >Services</th>
-            <th >Needed? (YES / NO)</th>
-            <th  >Quantity</th>
-            <th  >Service Item Unit Price(TL+VAT)</th>
-             <th >Service Item Total Price(TL+VAT)</th>
-            <th >Project Total Price(TL+VAT)</th>
+          <tr class="table-primary">
+            <th>Services</th>
+            <th>Needed? (YES / NO)</th>
+            <th>Quantity</th>
+            <th>Service Item Unit Price(TL+VAT)</th>
+            <th>Service Item Total Price(TL+VAT)</th>
           </tr>
         </thead>
          
           <tr>
-            <td data-bs-toggle="tooltip" title="Build your valuable startups in a trice" >Pitch Deck Boot Camp</td>
+            <td title="Build your valuable startups in a trice" 
+                data-bs-toggle="tooltip">Pitch Deck Boot Camp
+            </td>
             <td >
               <!-- Checked switch -->
               <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" onchange="function_cal(1)" name="s1check"  id="s1check" style="position: absolute;"   />
               </div>
               </td>
-            <td><input type="number" onchange="function_cal(1)" value="0"  min="0" max="20" name="s1qty"  id="s1qty" disabled></td>
-            <td> <input type="text" name="s1price" value="14990" disabled="Disabled"  id="s1price"></td>
-            <td><input type="text" name="s1tprice" id="s1tprice"  disabled="Disabled"></td>
-            <td rowspan="10" style="vertical-align: middle; "><label id="tCost" style="font-size: 22px; color: #000080;">0</label></td>
+            <td>
+                <input type="number" onchange="function_cal(1)" value="0" min="0" max="20" name="s1qty" id="s1qty" disabled >
+            </td>
+            <td>
+                <input type="text" name="s1price" value="14990" disabled="Disabled" id="s1price" size="5">
+                
+            </td>
+            <td>
+                <input type="text" name="s1tprice" value="0" id="s1tprice" disabled="Disabled" size="5">
+            </td>
           </tr>
           <tr>
             <td data-bs-toggle="tooltip" title="Care your startups during their development journey">Sync Up Boot Camp</td>
@@ -94,9 +116,13 @@
                 <input class="form-check-input" type="checkbox" onchange="function_cal(2)" name="s2check"  id="s2check" style="position: absolute;"   />
               </div>
             </td>
-            <td><input type="number" onchange="function_cal(2)" value="0" min="0" max="20"  name="s2qty"  id="s2qty" disabled ></td>
-            <td> <input type="text" name="s2price" value="9990" disabled="Disabled"  id="s2price"></td>
-            <td><input type="text" disabled="Disabled" name="s2tprice" id="s2tprice" value="0"></td>
+            <td>
+                <input type="number" onchange="function_cal(2)" value="0" min="0" max="20"  name="s2qty" id="s2qty" disabled >
+            </td>
+            <td>
+                <input type="text" name="s2price" value="9990" disabled="Disabled" id="s2price" size="5">
+            </td>
+            <td><input type="text" disabled="Disabled" name="s2tprice" id="s2tprice" value="0" size="5"></td>
          
           </tr>
           <tr>
@@ -108,8 +134,8 @@
             </td>
             <td>
               <input type="number"  onchange="function_cal(3)" value="0" min="0" max="20"   name="s3qty"  id="s3qty" disabled></td>
-            <td> <input type="text" name="s3price" value="19990" disabled="Disabled"  id="s3price"></td>
-            <td><input type="text" disabled="Disabled"  name="s3tprice" id="s3tprice" value="0"></td>
+            <td> <input type="text" name="s3price" value="19990" disabled="Disabled"  id="s3price" size="5"></td>
+            <td><input type="text" disabled="Disabled"  name="s3tprice" id="s3tprice" value="0" size="5"></td>
          
           </tr>
           <tr>
@@ -118,24 +144,24 @@
               <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" onchange="function_cal(4)" name="s4check"  id="s4check" style="position: absolute;"   />
               </div>
-
+    
             </td>
             <td><input type="number" onchange="function_cal(4)" value="0"  min="0" max="10"  name="s4qty"  id="s4qty" disabled></td>
-            <td> <input type="text" name="s4price" value="149990" disabled="Disabled"  id="s4price"></td>
-            <td><input type="text" disabled="Disabled"  name="s4tprice" id="s4tprice" value="0"></td>
+            <td> <input type="text" name="s4price" value="149990" disabled="Disabled"  id="s4price" size="5"></td>
+            <td><input type="text" disabled="Disabled"  name="s4tprice" id="s4tprice" value="0" size="5"></td>
          
           </tr>
           <tr>
             <td  data-bs-toggle="tooltip" title="Startups will have at least 50 mentoring sessions for their vertical sector (via Mentornity)" >Number of Mentored Startups in One Period</td>
             <td>
-
+    
                <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox"  onchange="function_cal(5)" name="s5check"  id="s5check" style="position: absolute;"   />
               </div>
             </td>
             <td><input type="number" onchange="function_cal(5)" value="0" min="0" max="20"   name="s5qty"  id="s5qty" disabled></td>
-            <td> <input type="text" name="s5price" value="1990" disabled="Disabled"  id="s5price"></td>
-            <td><input type="text" disabled="Disabled"  name="s5tprice" id="s5tprice" value="0"></td>
+            <td> <input type="text" name="s5price" value="1990" disabled="Disabled"  id="s5price" size="5"></td>
+            <td><input type="text" disabled="Disabled"  name="s5tprice" id="s5tprice" value="0" size="5"></td>
          
           </tr>
           <tr>
@@ -144,11 +170,11 @@
               <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox"  onchange="function_cal(6)" name="s6check"  id="s6check" style="position: absolute;"   />
               </div>
-
+    
                </td>
             <td><input type="number" onchange="function_cal(6)" value="0" min="0" max="120"  name="s6qty"  id="s6qty" disabled></td>
-            <td> <input type="text" name="s6price" value="1990" disabled="Disabled"  id="s6price"></td>
-            <td><input type="text" disabled="Disabled"  name="s6tprice" id="s6tprice" value="0"></td>
+            <td> <input type="text" name="s6price" value="1990" disabled="Disabled"  id="s6price" size="5"></td>
+            <td><input type="text" disabled="Disabled"  name="s6tprice" id="s6tprice" value="0" size="5"></td>
          
           </tr>
           <tr>
@@ -157,11 +183,11 @@
                <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" onchange="function_cal(7)" name="s7check"  id="s7check" style="position: absolute;"   />
                 </div>
-
+    
             </td>
             <td><input type="number" onchange="function_cal(7)" value="0"  min="0" max="10"  name="s7qty"  id="s7qty"disabled ></td>
-            <td> <input type="text" name="s7price" value="49900" disabled="Disabled"  id="s7price"></td>
-            <td><input type="text" disabled="Disabled"  name="s7tprice" id="s7tprice" value="0"></td>
+            <td> <input type="text" name="s7price" value="49900" disabled="Disabled"  id="s7price" size="5"></td>
+            <td><input type="text" disabled="Disabled"  name="s7tprice" id="s7tprice" value="0" size="5"></td>
          
           </tr>
           <tr>
@@ -172,8 +198,8 @@
                 </div>
               </td>
             <td><input type="number" min="0"  onchange="function_cal(8)" value="0" max="10" name="s8qty"  id="s8qty" disabled></td>
-            <td> <input type="text" name="s8price" value="99900" disabled="Disabled"  id="s8price"></td>
-            <td><input type="text" disabled="Disabled"  name="s8tprice" id="s8tprice" value="0"></td>
+            <td> <input type="text" name="s8price" value="99900" disabled="Disabled"  id="s8price" size="5"></td>
+            <td><input type="text" disabled="Disabled"  name="s8tprice" id="s8tprice" value="0" size="5"></td>
          
           </tr>
           <tr>
@@ -184,8 +210,8 @@
                 </div>
             </td>
             <td><input type="number" onchange="function_cal(9)" value="0"  min="0" max="100"  name="s9qty"  id="s9qty" disabled></td>
-            <td> <input type="text" name="s9price" value="490" disabled="Disabled"  id="s9price"></td>
-            <td><input type="text" disabled="Disabled"  name="s9tprice" id="s9tprice" value="0"></td>
+            <td> <input type="text" name="s9price" value="490" disabled="Disabled"  id="s9price" size="5"></td>
+            <td><input type="text" disabled="Disabled"  name="s9tprice" id="s9tprice" value="0" size="5"></td>
             
          
           </tr>
@@ -195,62 +221,44 @@
               <div class="form-check form-switch">
                   <input class="form-check-input" type="checkbox"  onchange="function_cal(10)" name="s10check"  id="s10check" style="position: absolute;"   />
                 </div>
-
-
+    
+    
            </td>
             <td><input type="number"  min="0" onchange="function_cal(10)" value="0" max="50"  name="s10qty"  id="s10qty" disabled></td>
-            <td> <input type="text" name="s10price" value="10000" disabled="Disabled"  id="s10price"></td>
-            <td><input type="text" disabled="Disabled"  name="s10tprice" id="s10tprice" value="0">
+            <td> <input type="text" name="s10price" value="10000" disabled="Disabled"  id="s10price" size="5"></td>
+            <td><input type="text" disabled="Disabled"  name="s10tprice" id="s10tprice" value="0" size="5">
               </td>
          
           </tr>
-          
-          <!-- <tr>
-
-            <td></td>
-            
-            <td></td>
-            
-            <td></td>
-            
-            <td></td>
-            
-            <td></td>
-            <td rowspan="2">
-              <a href="#">
-              <img src="image/printer.png"  onclick=" print()" width="80">
-              </a>
-              <p>Print your quotation now!</p>
+          <tr class="table-primary">
+            <td colspan="4" class="text-center">
+                <strong>Project Total Price(TL+VAT)</strong>
             </td>
-          </tr> -->
- 
+            <td><strong id="tCost">0</strong></td>
+          </tr>
         
       </table>
-        <!-- <p class="mt-5 mb-3 text-muted" id="footer_id">&copy; 2022 HatchMove. All rights reserved.</p> -->
-
-    </div>
+    <!--</div>-->
+          </div>
+          
+      </div>
       
-
-    <a type="button" onclick="window.print();" value="print a div!"  href="#">
+      <div class="text-center">
+    <a type="button" onclick="window.print();" value="print a div!" href="#">
       <img src="image/printer.png" height="30px" width="30px">
     </a>
     <p>Print your quotation now!</p>
 
-    <p class="mt-5 mb-3 text-muted" id="footer_id">&copy; 2022 HatchMove. All rights reserved.</p>
+    <p class=" text-muted" id="footer_id">&copy; 2022 HatchMove. All rights reserved.</p>
+      </div>
 
-  </main>
+  </section>
 
   <script type="text/javascript">
 
 function logout(){
-    var loc = window.location.pathname;
-    var dir = loc.substring(0, loc.lastIndexOf('/'));
-    var len = dir.length;
-    dir = dir.substring(1, len);
-
   localStorage.clear();
-
-  window.location.replace(dir +"/login.html");
+  window.location.href = "login.html";
 };
 
   let x = Math.floor((Math.random() * 100000000) + 1);
@@ -419,8 +427,7 @@ function logout(){
       // body...
     }
 
-    function _cal1()
-    {
+    function _cal1(){
 
       var toto = 0;
       toto = 
@@ -436,31 +443,6 @@ function logout(){
         Number(document.getElementById("s10tprice").value);
         document.getElementById("tCost").innerHTML = toto;
     }
-
-  // function  print(){
-  //   document.getElementById("footer_id").style.display = "none";
-  //    // document.getElementById("c2").style.display = "block";
- 
-  //       let printContents, popupWin;
-  //       printContents = document.getElementById('print_id').innerHTML;
-  //       popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
-  //       popupWin.document.open();
-  //       alert(printContents);
-  //       // popupWin.document.close();
-  //       // document.getElementById("footer_id").style.display = "block";
-  //    // document.getElementById("c2").style.display = "none";
-  //   }
-
-  function printDiv(divName) {
-    //  var printContents = document.getElementById(divName).innerHTML;
-    //  var originalContents = document.body.innerHTML;
-
-    //  document.body.innerHTML = printContents;
-
-     window.print();
-
-    //  document.body.innerHTML = originalContents;
-}
 
   </script>
 

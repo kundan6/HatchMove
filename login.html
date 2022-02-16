@@ -1,13 +1,4 @@
-<script type="text/javascript">
-    var loc = window.location.pathname;
-    var dir = loc.substring(0, loc.lastIndexOf('/'));
-    var len = dir.length;
-    dir = dir.substring(1, len);  
-      
-  
-
-</script>
- <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -90,7 +81,8 @@ function function_ne() {
   if(email = email1 && pass == pass1)
   { 
     localStorage.setItem("is_act", "1");
-    window.location.replace(dir +"/price.html");
+    // window.location.replace(dir +"/price.html");
+    window.location.href = "price.html";
   }else{
     localStorage.setItem("is_act", "0");
     alert("Sorry Wrong username or password");
