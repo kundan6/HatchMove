@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+<link rel="shortcut icon" href="image/favicon.png" />
+    <title>Pricing</title> 
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
+      if(localStorage.is_act != 1)
+      {
+          window.location.replace("login.html");
+      }
+    </script>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+     
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/e6cab2420c.js"></script>
+  </head>
+  <body class="text-center">
+    
+
+  <main class="container" id="print-section"  style="margin-top:150px ;">
+    
+
+    <a type ="button" onClick="logout()"  href="#" title="logout"><i style="text-align: right;" class="fa fa-sign-out"></i> Logout</a>
+    
+    <br>
+      <img src="image/loogoo.png" alt="" height="50">
+
+      <h2 class="h3 mb-3 fw-normal" style="color:#000080; margin-top: 10px;">Welcome to HatchMove</h2>
+    <p>Please select the service items your organization would need and calculate your quotation automatically:</p>
+
+    <div class="container" id="print_id">
+      <table class="table text-center">
+        <thead id="c2" style="display: block;">
+          <!-- <p>
+            <center><img class="mb-4" src="image/loogoo.png" alt=""   height="57"></center>
+          </p> -->
+          
+          <p style="text-align: right;">
+              <strong>Quotation No:</strong> <span id="qtn"></span>
+          </p>
+          
+         
+        </thead>
+        <thead>
+          
+          <tr>
+            <th  >Services</th>
+            <th >Needed? (YES / NO)</th>
+            <th  >Quantity</th>
+            <th  >Service Item Unit Price(TL+VAT)</th>
+             <th >Service Item Total Price(TL+VAT)</th>
+            <th >Project Total Price(TL+VAT)</th>
+          </tr>
+        </thead>
+         
+          <tr>
+            <td data-bs-toggle="tooltip" title="Build your valuable startups in a trice" >Pitch Deck Boot Camp</td>
+            <td >
+              <!-- Checked switch -->
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" onchange="function_cal(1)" name="s1check"  id="s1check" style="position: absolute;"   />
+              </div>
+              </td>
+            <td><input type="number" onchange="function_cal(1)" value="0"  min="0" max="20" name="s1qty"  id="s1qty" disabled></td>
+            <td> <input type="text" name="s1price" value="14990" disabled="Disabled"  id="s1price"></td>
+            <td><input type="text" name="s1tprice" id="s1tprice"  disabled="Disabled"></td>
+            <td rowspan="10" style="vertical-align: middle; "><label id="tCost" style="font-size: 22px; color: #000080;">0</label></td>
+          </tr>
+          <tr>
+            <td data-bs-toggle="tooltip" title="Care your startups during their development journey">Sync Up Boot Camp</td>
+            <td>
+               <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" onchange="function_cal(2)" name="s2check"  id="s2check" style="position: absolute;"   />
+              </div>
+            </td>
+            <td><input type="number" onchange="function_cal(2)" value="0" min="0" max="20"  name="s2qty"  id="s2qty" disabled ></td>
+            <td> <input type="text" name="s2price" value="9990" disabled="Disabled"  id="s2price"></td>
+            <td><input type="text" disabled="Disabled" name="s2tprice" id="s2tprice" value="0"></td>
+         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="All-in-one package included services in 'Pitch Deck Boot Camp' and 'Sync Up Boot Camp'" >Bundle Boot Camp</td>
+            <td>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" onchange="function_cal(3)" name="s3check"  id="s3check" style="position: absolute;"   />
+              </div>
+            </td>
+            <td>
+              <input type="number"  onchange="function_cal(3)" value="0" min="0" max="20"   name="s3qty"  id="s3qty" disabled></td>
+            <td> <input type="text" name="s3price" value="19990" disabled="Disabled"  id="s3price"></td>
+            <td><input type="text" disabled="Disabled"  name="s3tprice" id="s3tprice" value="0"></td>
+         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="Let's start your incubation/acceleration center journey! This service contains programme announcement, branding, live sessions, learning videos, basic marketing spends (Google Ads etc.), operational resource costs and programme execution via Slack (for each 20 startups)" >Incubation/Acceleration Center Foundation & Execution</td>
+            <td>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" onchange="function_cal(4)" name="s4check"  id="s4check" style="position: absolute;"   />
+              </div>
+
+            </td>
+            <td><input type="number" onchange="function_cal(4)" value="0"  min="0" max="10"  name="s4qty"  id="s4qty" disabled></td>
+            <td> <input type="text" name="s4price" value="149990" disabled="Disabled"  id="s4price"></td>
+            <td><input type="text" disabled="Disabled"  name="s4tprice" id="s4tprice" value="0"></td>
+         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="Startups will have at least 50 mentoring sessions for their vertical sector (via Mentornity)" >Number of Mentored Startups in One Period</td>
+            <td>
+
+               <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox"  onchange="function_cal(5)" name="s5check"  id="s5check" style="position: absolute;"   />
+              </div>
+            </td>
+            <td><input type="number" onchange="function_cal(5)" value="0" min="0" max="20"   name="s5qty"  id="s5qty" disabled></td>
+            <td> <input type="text" name="s5price" value="1990" disabled="Disabled"  id="s5price"></td>
+            <td><input type="text" disabled="Disabled"  name="s5tprice" id="s5tprice" value="0"></td>
+         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="Office needs for physical meetings and workshops where are located in most prestigious addresses" >Physical Coworking Office Usage per Startup (Monthly)</td>
+            <td>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox"  onchange="function_cal(6)" name="s6check"  id="s6check" style="position: absolute;"   />
+              </div>
+
+               </td>
+            <td><input type="number" onchange="function_cal(6)" value="0" min="0" max="120"  name="s6qty"  id="s6qty" disabled></td>
+            <td> <input type="text" name="s6price" value="1990" disabled="Disabled"  id="s6price"></td>
+            <td><input type="text" disabled="Disabled"  name="s6tprice" id="s6tprice" value="0"></td>
+         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="New domain, website and email creation for the programme" >Programme Specific Domain, Website, E-Mail forming & execution in One Period</td>
+            <td>
+               <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" onchange="function_cal(7)" name="s7check"  id="s7check" style="position: absolute;"   />
+                </div>
+
+            </td>
+            <td><input type="number" onchange="function_cal(7)" value="0"  min="0" max="10"  name="s7qty"  id="s7qty"disabled ></td>
+            <td> <input type="text" name="s7price" value="49900" disabled="Disabled"  id="s7price"></td>
+            <td><input type="text" disabled="Disabled"  name="s7tprice" id="s7tprice" value="0"></td>
+         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="Marketing spends of your Incubation/Acceleration center activities on some of the most popular social platforms (Webrazzi, GirisimHaber, ShiftDelete, TeknoHaber etc.)" >Additional Marketing Expenses</td>
+            <td>
+                <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" onchange="function_cal(8)" name="s8check"  id="s8check" style="position: absolute;"   />
+                </div>
+              </td>
+            <td><input type="number" min="0"  onchange="function_cal(8)" value="0" max="10" name="s8qty"  id="s8qty" disabled></td>
+            <td> <input type="text" name="s8price" value="99900" disabled="Disabled"  id="s8price"></td>
+            <td><input type="text" disabled="Disabled"  name="s8tprice" id="s8tprice" value="0"></td>
+         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="After the announcement, reviewing the startups according to the technical and commercial criterias of the programme owner" >Programme submission pre-screening and short list selection per Startup</td>
+            <td>
+               <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" onchange="function_cal(9)" name="s9check"  id="s9check" style="position: absolute;"   />
+                </div>
+            </td>
+            <td><input type="number" onchange="function_cal(9)" value="0"  min="0" max="100"  name="s9qty"  id="s9qty" disabled></td>
+            <td> <input type="text" name="s9price" value="490" disabled="Disabled"  id="s9price"></td>
+            <td><input type="text" disabled="Disabled"  name="s9tprice" id="s9tprice" value="0"></td>
+            
+         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="Financial support for rapid growing. Cash Funding for each startup and Award payment for first 3 startups (e.g. First 75000 TL, Second 50000TL, Third 25000 TL)" >Cash Funding and Award Payment</td>
+            <td>
+              <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox"  onchange="function_cal(10)" name="s10check"  id="s10check" style="position: absolute;"   />
+                </div>
+
+
+           </td>
+            <td><input type="number"  min="0" onchange="function_cal(10)" value="0" max="50"  name="s10qty"  id="s10qty" disabled></td>
+            <td> <input type="text" name="s10price" value="10000" disabled="Disabled"  id="s10price"></td>
+            <td><input type="text" disabled="Disabled"  name="s10tprice" id="s10tprice" value="0">
+              </td>
+         
+          </tr>
+          
+          <!-- <tr>
+
+            <td></td>
+            
+            <td></td>
+            
+            <td></td>
+            
+            <td></td>
+            
+            <td></td>
+            <td rowspan="2">
+              <a href="#">
+              <img src="image/printer.png"  onclick=" print()" width="80">
+              </a>
+              <p>Print your quotation now!</p>
+            </td>
+          </tr> -->
+ 
+        
+      </table>
+        <!-- <p class="mt-5 mb-3 text-muted" id="footer_id">&copy; 2022 HatchMove. All rights reserved.</p> -->
+
+    </div>
+      
+
+    <a type="button" onclick="window.print();" value="print a div!"  href="#">
+      <img src="image/printer.png" height="30px" width="30px">
+    </a>
+    <p>Print your quotation now!</p>
+
+    <p class="mt-5 mb-3 text-muted" id="footer_id">&copy; 2022 HatchMove. All rights reserved.</p>
+
+  </main>
+
+  <script type="text/javascript">
+
+function logout(){
+    var loc = window.location.pathname;
+    var dir = loc.substring(0, loc.lastIndexOf('/'));
+    var len = dir.length;
+    dir = dir.substring(1, len);
+
+  localStorage.clear();
+
+  window.location.replace(dir +"/login.html");
+};
+
+  let x = Math.floor((Math.random() * 100000000) + 1);
+
+    document.getElementById("qtn").innerHTML=x;
+
+
+    function function_cal(number) {
+      if(number == 1)
+      {
+        if (s1check.checked == true){
+          document.getElementById("s1qty").disabled = false;
+          var total = document.getElementById("s1qty").value * document.getElementById("s1price").value;
+          document.getElementById("s1tprice").value = total;
+        } else {
+         
+          document.getElementById("s1tprice").value = 0;
+          document.getElementById("s1qty").value = 0;
+          document.getElementById("s1qty").disabled = true; 
+
+        }
+   
+      
+        
+      }else if (number == 2) 
+      {
+         if (s2check.checked == true){
+          document.getElementById("s2qty").disabled = false;
+
+          var total = document.getElementById("s2qty").value * document.getElementById("s2price").value;
+          document.getElementById("s2tprice").value = total;
+        } else {
+         
+          document.getElementById("s2tprice").value = 0;
+          document.getElementById("s2qty").value = 0;
+                    document.getElementById("s2qty").disabled = true; 
+
+       
+        }
+      }
+      else if (number == 3) 
+      {
+        if (s3check.checked == true){
+                    document.getElementById("s3qty").disabled = false;
+
+          var total = document.getElementById("s3qty").value * document.getElementById("s3price").value;
+          document.getElementById("s3tprice").value = total;
+        } else {
+         
+          document.getElementById("s3tprice").value = 0;
+          document.getElementById("s3qty").value = 0;
+                    document.getElementById("s3qty").disabled = true; 
+
+       
+        }
+      }
+      else if (number == 4) 
+      {
+        if (s4check.checked == true){
+                    document.getElementById("s4qty").disabled = false;
+
+          var total = document.getElementById("s4qty").value * document.getElementById("s4price").value;
+          document.getElementById("s4tprice").value = total;
+        } else {
+         
+          document.getElementById("s4tprice").value = 0;
+          document.getElementById("s4qty").value = 0;
+                    document.getElementById("s4qty").disabled = true; 
+
+        }
+      }
+      else if (number == 5) 
+      {
+        if (s5check.checked == true){
+                    document.getElementById("s5qty").disabled = false;
+
+          var total = document.getElementById("s5qty").value * document.getElementById("s5price").value;
+          document.getElementById("s5tprice").value = total;
+        } else {
+         
+          document.getElementById("s5tprice").value = 0;
+          document.getElementById("s5qty").value = 0;
+                    document.getElementById("s5qty").disabled = true; 
+
+       
+        }
+      }
+      else if (number == 6) 
+      {
+        if (s6check.checked == true){
+                    document.getElementById("s6qty").disabled = false;
+
+          var total = document.getElementById("s6qty").value * document.getElementById("s6price").value;
+          document.getElementById("s6tprice").value = total;
+        } else {
+         
+          document.getElementById("s6tprice").value = 0;
+          document.getElementById("s6qty").value = 0;
+                    document.getElementById("s6qty").disabled = true; 
+
+       
+        }
+      }
+      else if (number == 7) 
+      {
+        if (s7check.checked == true){
+                    document.getElementById("s7qty").disabled = false;
+
+          var total = document.getElementById("s7qty").value * document.getElementById("s7price").value;
+          document.getElementById("s7tprice").value = total;
+        } else {
+         
+          document.getElementById("s7tprice").value = 0;
+          document.getElementById("s7qty").value = 0;
+                    document.getElementById("s7qty").disabled = true; 
+
+       
+        }
+      }
+      else if (number == 8) 
+      {
+        if (s8check.checked == true){
+                    document.getElementById("s8qty").disabled = false;
+
+          var total = document.getElementById("s8qty").value * document.getElementById("s8price").value;
+          document.getElementById("s8tprice").value = total;
+        } else {
+         
+          document.getElementById("s8tprice").value = 0;
+          document.getElementById("s8qty").value = 0;
+                    document.getElementById("s8qty").disabled = true; 
+
+        }
+      }
+      else if (number == 9) 
+      {
+        if (s9check.checked == true){
+                    document.getElementById("s9qty").disabled = false;
+
+          var total = document.getElementById("s9qty").value * document.getElementById("s9price").value;
+          document.getElementById("s9tprice").value = total;
+        } else {
+         
+          document.getElementById("s9tprice").value = 0;
+          document.getElementById("s9qty").value = 0;
+                 document.getElementById("s9qty").disabled = true; 
+
+        }
+      } 
+      else if (number == 10) 
+      {
+        if (s10check.checked == true){
+          document.getElementById("s10qty").disabled = false;
+          var total = document.getElementById("s10qty").value * document.getElementById("s10price").value;
+          document.getElementById("s10tprice").value = total;
+        } else {
+         
+          document.getElementById("s10tprice").value = 0;
+          document.getElementById("s10qty").value = 0;
+          document.getElementById("s10qty").disabled = true; 
+       
+        }
+      }   
+      else {}
+        _cal1();
+      // body...
+    }
+
+    function _cal1()
+    {
+
+      var toto = 0;
+      toto = 
+        Number(document.getElementById("s1tprice").value) +
+        Number(document.getElementById("s2tprice").value) +
+               Number(document.getElementById("s3tprice").value) +
+        Number(document.getElementById("s4tprice").value) +
+        Number(document.getElementById("s5tprice").value) +
+        Number(document.getElementById("s6tprice").value) +
+        Number(document.getElementById("s7tprice").value) +
+        Number(document.getElementById("s8tprice").value) +
+        Number(document.getElementById("s9tprice").value) +
+        Number(document.getElementById("s10tprice").value);
+        document.getElementById("tCost").innerHTML = toto;
+    }
+
+  // function  print(){
+  //   document.getElementById("footer_id").style.display = "none";
+  //    // document.getElementById("c2").style.display = "block";
+ 
+  //       let printContents, popupWin;
+  //       printContents = document.getElementById('print_id').innerHTML;
+  //       popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
+  //       popupWin.document.open();
+  //       alert(printContents);
+  //       // popupWin.document.close();
+  //       // document.getElementById("footer_id").style.display = "block";
+  //    // document.getElementById("c2").style.display = "none";
+  //   }
+
+  function printDiv(divName) {
+    //  var printContents = document.getElementById(divName).innerHTML;
+    //  var originalContents = document.body.innerHTML;
+
+    //  document.body.innerHTML = printContents;
+
+     window.print();
+
+    //  document.body.innerHTML = originalContents;
+}
+
+  </script>
+
+    
+  </body>
+</html>
