@@ -15,7 +15,10 @@
       }
     </script>
     <style>
-      table tr td {border: 2px solid #ccc;}
+        table tr td ,th { border:2px solid #ccc; font-size:13px;}
+      .table>tbody {   
+       background: #fff;
+       }
       .table>tbody {   
        background: #fff;
        }
@@ -51,7 +54,7 @@
     <link href="signin.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/e6cab2420c.js"></script>
   </head>
-  <body>
+  <body style="margin-top:20px">
   <section class="container" id="print-section">
       <div class="row">
           <div class="col"></div>
@@ -124,9 +127,9 @@
                 <input type="number" onchange="function_cal(2)" value="0" min="0" max="20"  name="s2qty" id="s2qty" disabled >
             </td>
             <td>
-                <input type="text" name="s2price" value="9990" disabled="Disabled" id="s2price" size="5">
+                <input type="text" name="s2price" value="9990" disabled="Disabled" id="s2price">
             </td>
-            <td><input type="text" disabled="Disabled" name="s2tprice" id="s2tprice" value="0" size="5"></td>
+            <td><input type="text" disabled="Disabled" name="s2tprice" id="s2tprice" value="0"></td>
          
           </tr>
           <tr>
@@ -138,8 +141,8 @@
             </td>
             <td>
               <input type="number"  onchange="function_cal(3)" value="0" min="0" max="20"   name="s3qty"  id="s3qty" disabled></td>
-            <td> <input type="text" name="s3price" value="19990" disabled="Disabled"  id="s3price" size="5"></td>
-            <td><input type="text" disabled="Disabled"  name="s3tprice" id="s3tprice" value="0" size="5"></td>
+            <td> <input type="text" name="s3price" value="19990" disabled="Disabled"  id="s3price"></td>
+            <td><input type="text" disabled="Disabled"  name="s3tprice" id="s3tprice" value="0"></td>
          
           </tr>
           <tr>
@@ -151,8 +154,8 @@
     
             </td>
             <td><input type="number" onchange="function_cal(4)" value="0"  min="0" max="10"  name="s4qty"  id="s4qty" disabled></td>
-            <td> <input type="text" name="s4price" value="149990" disabled="Disabled"  id="s4price" size="5"></td>
-            <td><input type="text" disabled="Disabled"  name="s4tprice" id="s4tprice" value="0" size="5"></td>
+            <td> <input type="text" name="s4price" value="149990" disabled="Disabled"  id="s4price"></td>
+            <td><input type="text" disabled="Disabled"  name="s4tprice" id="s4tprice" value="0" ></td>
          
           </tr>
           <tr>
@@ -164,8 +167,8 @@
               </div>
             </td>
             <td><input type="number" onchange="function_cal(5)" value="0" min="0" max="20"   name="s5qty"  id="s5qty" disabled></td>
-            <td> <input type="text" name="s5price" value="1990" disabled="Disabled"  id="s5price" size="5"></td>
-            <td><input type="text" disabled="Disabled"  name="s5tprice" id="s5tprice" value="0" size="5"></td>
+            <td> <input type="text" name="s5price" value="1990" disabled="Disabled"  id="s5price" ></td>
+            <td><input type="text" disabled="Disabled"  name="s5tprice" id="s5tprice" value="0" ></td>
          
           </tr>
           <tr>
@@ -177,8 +180,8 @@
     
                </td>
             <td><input type="number" onchange="function_cal(6)" value="0" min="0" max="120"  name="s6qty"  id="s6qty" disabled></td>
-            <td> <input type="text" name="s6price" value="1990" disabled="Disabled"  id="s6price" size="5"></td>
-            <td><input type="text" disabled="Disabled"  name="s6tprice" id="s6tprice" value="0" size="5"></td>
+            <td> <input type="text" name="s6price" value="1990" disabled="Disabled"  id="s6price" ></td>
+            <td><input type="text" disabled="Disabled"  name="s6tprice" id="s6tprice" value="0" ></td>
          
           </tr>
           <tr>
@@ -190,8 +193,8 @@
     
             </td>
             <td><input type="number" onchange="function_cal(7)" value="0"  min="0" max="10"  name="s7qty"  id="s7qty"disabled ></td>
-            <td> <input type="text" name="s7price" value="49900" disabled="Disabled"  id="s7price" size="5"></td>
-            <td><input type="text" disabled="Disabled"  name="s7tprice" id="s7tprice" value="0" size="5"></td>
+            <td> <input type="text" name="s7price" value="49900" disabled="Disabled"  id="s7price"></td>
+            <td><input type="text" disabled="Disabled"  name="s7tprice" id="s7tprice" value="0" ></td>
          
           </tr>
           <tr>
@@ -202,8 +205,8 @@
                 </div>
               </td>
             <td><input type="number" min="0"  onchange="function_cal(8)" value="0" max="10" name="s8qty"  id="s8qty" disabled></td>
-            <td> <input type="text" name="s8price" value="99900" disabled="Disabled"  id="s8price" size="5"></td>
-            <td><input type="text" disabled="Disabled"  name="s8tprice" id="s8tprice" value="0" size="5"></td>
+            <td> <input type="text" name="s8price" value="99900" disabled="Disabled"  id="s8price" ></td>
+            <td><input type="text" disabled="Disabled"  name="s8tprice" id="s8tprice" value="0" ></td>
          
           </tr>
           <tr>
@@ -214,8 +217,8 @@
                 </div>
             </td>
             <td><input type="number" onchange="function_cal(9)" value="0"  min="0" max="100"  name="s9qty"  id="s9qty" disabled></td>
-            <td> <input type="text" name="s9price" value="490" disabled="Disabled"  id="s9price" size="5"></td>
-            <td><input type="text" disabled="Disabled"  name="s9tprice" id="s9tprice" value="0" size="5"></td>
+            <td> <input type="text" name="s9price" value="490" disabled="Disabled"  id="s9price" ></td>
+            <td><input type="text" disabled="Disabled"  name="s9tprice" id="s9tprice" value="0" ></td>
             
          
           </tr>
@@ -229,8 +232,20 @@
     
            </td>
             <td><input type="number"  min="0" onchange="function_cal(10)" value="0" max="50"  name="s10qty"  id="s10qty" disabled></td>
-            <td> <input type="text" name="s10price" value="10000" disabled="Disabled"  id="s10price" size="5"></td>
-            <td><input type="text" disabled="Disabled"  name="s10tprice" id="s10tprice" value="0" size="5">
+            <td> <input type="text" name="s10price" value="10000" disabled="Disabled"  id="s10price" ></td>
+            <td><input type="text" disabled="Disabled"  name="s10tprice" id="s10tprice" value="0" >
+              </td>         
+          </tr>
+          <tr>
+            <td  data-bs-toggle="tooltip" title="Financial support for rapid growing. Cash Funding for each startup and Award payment for first 3 startups (e.g. First 75000 TL, Second 50000TL, Third 25000 TL)" >Cash Funding and Award Payment</td>
+            <td>
+              <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox"  onchange="function_cal(10)" name="s10check"  id="s10check" style="position: absolute;"   />
+                </div> 
+           </td>
+            <td><input type="number"  min="0" onchange="function_cal(10)" value="0" max="50"  name="s10qty"  id="s10qty" disabled></td>
+            <td> <input type="text" name="s10price" value="10000" disabled="Disabled"  id="s10price" ></td>
+            <td><input type="text" disabled="Disabled"  name="s10tprice" id="s10tprice" value="0" >
               </td>
          
           </tr>
